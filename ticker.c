@@ -38,3 +38,16 @@ void tickClock(struct Clock *clock)
         continue;
     }
 }
+
+int main()
+{
+    struct Clock *clock = malloc(sizeof(struct Clock));
+    setClock(clock, 5);
+    for (int i = 0; i < 50; i++)
+    {
+        tickClock(clock);
+        printf("Ticked\n");
+    }
+    free(clock);
+    return 0;
+}
